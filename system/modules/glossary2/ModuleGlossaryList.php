@@ -21,8 +21,8 @@
  * Software Foundation website at <http://www.gnu.org/licenses/>.
  *
  * PHP version 5
- * @copyright  Leo Feyer 2005-2011
- * @author     Leo Feyer <http://www.contao.org>
+ * @copyright  Leo Feyer 2005-2011, Mario Müller 2012
+ * @author     Leo Feyer <http://www.contao.org>, Mario Müller <http://www.lingo4u.de>
  * @package    Glossary
  * @license    LGPL
  * @filesource
@@ -32,8 +32,8 @@
 /**
  * Class ModuleGlossaryList
  *
- * @copyright  Leo Feyer 2008-2011
- * @author     Leo Feyer <http://www.contao.org>
+ * @copyright  Leo Feyer 2005-2011, Mario Müller 2012
+ * @author     Leo Feyer <http://www.contao.org>, Mario Müller <http://www.lingo4u.de>
  * @package    Controller
  */
 class ModuleGlossaryList extends Module

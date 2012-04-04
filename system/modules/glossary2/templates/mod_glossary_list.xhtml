@@ -4,13 +4,22 @@
 
 <<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
 <?php endif; ?>
+
+<ul class="keys">
+<?php foreach ($this->terms as $key=>$terms): ?>
+	<li><a href="<?php echo $this->request.'#'.$terms[0]->anchor; ?>"><?php echo $key; ?></a></li>
+<?php endforeach; ?>
+</ul>
+
 <?php foreach ($this->terms as $key=>$terms): ?>
 
 <h2 id="<?php echo $terms[0]->anchor; ?>"><?php echo $key; ?></h2>
 <dl>
 <?php foreach ($terms as $term): ?>
-<dt id="<?php echo $term->id; ?>"><?php echo $term->term; ?></dt>
-<dd>
+<dt id="<?php echo $term->id; ?>"<?php if ($term->hasParent): ?>class="hasParent"<?php endif; ?>><?php echo $term->term; ?></dt>
+<?php if ($term->isReference): ?><dd class="reference">→ <em><a href="<?php echo $this->request.'#'.$term->referenceAnchor; ?>"><?php echo $term->referenceTerm; ?></a></em></dd><?php else: ?>
+<dd<?php if ($term->addExample): ?> class="hasExample"<?php endif; ?>>
+
 <div class="ce_text block">
 <?php if (!$term->addBefore): ?>
 
@@ -37,6 +46,12 @@
 <?php endif; ?>
 
 </div>
+<?php if ($term->addExample): ?>
+<div class="ce_text block">
+	<?php echo $term->example; ?>
+</div>
+<?php endif; ?>
+
 <?php if ($term->enclosure): ?>
 
 <div class="enclosure">
@@ -46,6 +61,7 @@
 </div>
 <?php endif; ?>
 </dd>
+<?php endif; ?>
 <?php endforeach; ?>
 </dl>
 <p class="toplink"><a href="<?php echo $this->request; ?>#top"><?php echo $this->topLink; ?></a></p>

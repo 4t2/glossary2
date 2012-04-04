@@ -1,5 +1,12 @@
 <?php if (!defined('TL_ROOT')) die('You can not access this file directly!');
 
+/**
+ * Class GlossaryInsertTags
+ *
+ * @copyright  Mario Müller 2012
+ * @author     Mario Müller <http://www.lingo4u.de>
+ * @package    Controller
+ */
 class GlossaryInsertTags extends System
 {
    public function replaceInsertTags($strTag)
