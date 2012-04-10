@@ -378,7 +378,7 @@ class tl_glossary_term extends Backend
 		}
 		elseif ($dc->activeRecord->addReference == '')
 		{
-			$objTerms = $this->Database->prepare("SELECT `id`,`term` FROM `tl_glossary_term` WHERE `addReference`='1' AND `referenceTerm`=?")
+			$objTerms = $this->Database->prepare("SELECT `id`,`term` FROM `tl_glossary_term` WHERE `addReference`='1' AND `referenceType`='parent' AND `referenceTerm`=?")
 				->execute(
 					$dc->activeRecord->id
 				);
