@@ -421,11 +421,14 @@ class tl_glossary_term extends Backend
 	}
 
 
-	public function getParentTerms()
+	public function getParentTerms(DataContainer $dc)
 	{
 		$arrTerms = array();
 
-		$objTerms = $this->Database->prepare("SELECT `id`,`term` FROM `tl_glossary_term` WHERE `addReference`='' ORDER by `term`")->execute();
+		$objTerms = $this->Database->prepare("SELECT `id`,`term` FROM `tl_glossary_term` WHERE `addReference`='' AND `pid`=? ORDER by `term`")
+			->execute(
+				$dc->activeRecord->pid
+			);
 
 		while ($objTerms->next())
 		{

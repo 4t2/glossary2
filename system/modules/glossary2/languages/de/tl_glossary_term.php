@@ -35,7 +35,7 @@
 $GLOBALS['TL_LANG']['tl_glossary_term']['term']         = array('Begriff', 'Bitte geben Sie den Begriff ein.');
 $GLOBALS['TL_LANG']['tl_glossary_term']['author']       = array('Autor', 'Hier können Sie den Autor der Definition ändern.');
 $GLOBALS['TL_LANG']['tl_glossary_term']['addReference'] = array('Verweis/Beziehung auf Begriff hinzufügen', 'Verweis/Beziehung auf einen Begriff hinzufügen');
-$GLOBALS['TL_LANG']['tl_glossary_term']['referenceTerm'] = array('Begriff', 'Auf diesen Begriff verweisen/beziehen');
+$GLOBALS['TL_LANG']['tl_glossary_term']['referenceTerm'] = array('Verweisen auf', 'Auf diesen Begriff verweisen/beziehen');
 $GLOBALS['TL_LANG']['tl_glossary_term']['referenceType']['title'] = array('Beziehung', 'In welcher Beziehung stehen die Begriffe');
 $GLOBALS['TL_LANG']['tl_glossary_term']['referenceType']['reference'] = array(
 	'parent' => 'Übergeordneter Begriff',
@@ -47,7 +47,6 @@ $GLOBALS['TL_LANG']['tl_glossary_term']['example']      = array('Beispiel', 'Bei
 $GLOBALS['TL_LANG']['tl_glossary_term']['addImage']     = array('Ein Bild hinzufügen', 'Der Definition ein Bild hinzufügen.');
 $GLOBALS['TL_LANG']['tl_glossary_term']['addEnclosure'] = array('Anlagen hinzufügen', 'Der Definition eine oder mehrere Dateien als Download hinzufügen.');
 $GLOBALS['TL_LANG']['tl_glossary_term']['enclosure']    = array('Anlagen', 'Bitte wählen Sie die Dateien aus, die Sie hinzufügen möchten.');
-
 
 /**
  * Legends
