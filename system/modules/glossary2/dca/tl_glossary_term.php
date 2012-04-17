@@ -364,11 +364,12 @@ class tl_glossary_term extends Backend
 
 		if ($dc->activeRecord->addReference == '1' && $dc->activeRecord->referenceType == 'parent')
 		{
-			$objTerm = $this->Database->prepare("SELECT `id`,`term` FROM `tl_glossary_term` WHERE `id`=?")
+			$objTerm = $this->Database->prepare("SELECT `id`,`term` FROM `tl_glossary_term` WHERE `id`=? AND `pid`=?")
 				->limit(1)
 				->execute
 				(
-					$dc->activeRecord->referenceTerm
+					$dc->activeRecord->referenceTerm,
+					$dc->activeRecord->pid
 				);
 
 			if ($objTerm->next())
@@ -378,9 +379,10 @@ class tl_glossary_term extends Backend
 		}
 		elseif ($dc->activeRecord->addReference == '')
 		{
-			$objTerms = $this->Database->prepare("SELECT `id`,`term` FROM `tl_glossary_term` WHERE `addReference`='1' AND `referenceType`='parent' AND `referenceTerm`=?")
+			$objTerms = $this->Database->prepare("SELECT `id`,`term` FROM `tl_glossary_term` WHERE `addReference`='1' AND `referenceType`='parent' AND `referenceTerm`=? AND `pid`=?")
 				->execute(
-					$dc->activeRecord->id
+					$dc->activeRecord->id,
+					$dc->activeRecord->pid
 				);
 			
 			while ($objTerms->next())
